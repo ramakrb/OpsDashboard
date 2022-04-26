@@ -8,3 +8,4 @@ beautifulsoup4==4.9.3
 dataretrieval==0.6
 lxml==4.6.2
 click==8.0
+seaborn==0.11.2
