@@ -3,7 +3,7 @@ import pandas as pd
 import datetime
 from dateutil.relativedelta import relativedelta
 import base64
-from scipy import stats
+#from scipy import stats
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import rc
 import seaborn as sns
