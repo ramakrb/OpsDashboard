@@ -59,7 +59,7 @@ mpy = load_data('1930,1721',sel_int,ly,ly)
 #st.dataframe(df_elevn[t3:t2].mean(axis=0))
 avg = df_elevn[t3:t2].mean(axis=0)
 strDate = "(as of  " + str(df_elevn.index[7].strftime("%m-%d-%Y") + ")")
-header1 = '<p style="color:black; font-size: 20px;">' + strDate +'</p>'
+header1 = '<p font-size: 20px;">' + strDate +'</p>'
 medifflw = round((df_elevn.iloc[0]['SDI_1930']-df_elevn.iloc[7]['SDI_1930']),2)
 mediffly = round((df_elevn.iloc[7]['SDI_1930']-mpy.iloc[0]['SDI_1930']),2)
 mely = round(mpy.iloc[0]['SDI_1930'],2)
