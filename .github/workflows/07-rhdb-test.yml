@@ -10,7 +10,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}    
     steps:
       - name: Install udunits2
-        run: sudo yum install udunits2-devel
+        run: sudo apt-get install udunits2-devel
         
       - uses: actions/checkout@v3
       - uses: r-lib/actions/setup-r@v2
