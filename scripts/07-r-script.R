@@ -275,6 +275,36 @@ eq_tier_df <- function() {
 powell_line = eq_tier_df() %>%
   mutate(Cloud = factor(cloud_name))
 
+
+res <- c("mead", "powell") # reservoirs
+
+getData <- function(res) 
+{
+  tmp <- read.csv(file.path("data", paste0(res, "ElevationVolume.csv")))
+  tmp
+}
+
+evTables <- lapply(res, getData)
+names(evTables) <- tolower(res)
+
+
+elevation_to_storage <- function(elevation, reservoir)
+{
+  # evTables are system data for this package
+  e2vFunc <- stats::approxfun(
+    evTables[[reservoir]][,1], 
+    evTables[[reservoir]][,2]
+  )
+  
+  e2vFunc(elevation)
+}
+
+
+
+
+
+
+
 ## Powell -----------------------------------------------------------------------
 p_breaks <- seq(3350, 3725, 25)
 p_breaks2 <- seq(3350, 3725, 5)
@@ -298,8 +328,8 @@ gg <-
     labels = scales::comma, breaks = p_breaks, minor_breaks = p_breaks2,
     limits = yy,
     sec.axis = sec_axis(
-      ~CRSSIO::elevation_to_storage(., "powell"),
-      breaks = CRSSIO::elevation_to_storage(p_breaks, "powell"),
+      ~elevation_to_storage(., "powell"),
+      breaks = elevation_to_storage(p_breaks, "powell"),
       labels = scales::comma_format(scale = 1/1000000, accuracy = 0.01),
       name = "Storage (maf)"
     )
