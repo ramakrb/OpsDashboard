@@ -60,6 +60,7 @@ if (month(ym(run_date)) %in% list(1,4,8,10)) {
 
 
 histStart_date = format(ym(run_date) - months(hist_nMons), "%Y-%m")
+histEnd_date = format(ym(most_run_date) - months(1), "%Y-%m")
 sdis <- c("Mead.Pool Elevation" = 1930, "Powell.Pool Elevation" = 1928)
 slots <- names(sdis)
 mrid_to_trace <- c("24MS Min", "24MS Max", "24MS Most")
@@ -86,8 +87,8 @@ df_hdb <- df_hdb %>%
 
 ## Read historical data from hdb
 df_hist <- bind_rows(
-  hdb_query(sdis["Powell.Pool Elevation"], "uc", "m", histStart_date, most_run_date),
-  hdb_query(sdis["Mead.Pool Elevation"], "lc", "m", histStart_date, most_run_date)
+  hdb_query(sdis["Powell.Pool Elevation"], "uc", "m", histStart_date, histEnd_date),
+  hdb_query(sdis["Mead.Pool Elevation"], "lc", "m", histStart_date, histEnd_date)
 )
 
 df_hist <- df_hist %>%
