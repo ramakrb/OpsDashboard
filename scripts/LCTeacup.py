@@ -100,5 +100,6 @@ for res in res_attrib:
     draw.text(fraction_box[0], percent_string, fill=fill1, font=ImageFont.truetype(font_face, font_size))
     #draw.text(percent_box[0], percent_string, fill=colors['black'], font=ImageFont.truetype(font_face, font_size))
    
-full_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),'Basin8TC.png')
+#full_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),'Basin8TC.png')
+full_path = 'scripts/Basin8TC.png'
 img2.save(full_path)
