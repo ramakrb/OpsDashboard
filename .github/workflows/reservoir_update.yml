@@ -28,8 +28,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add scripts/Basin8TC.png
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config --local user.name "$GITHUB_ACTOR"
+          git add -A
           git commit -m "Update Basin8TC.png" || echo "No changes to commit"
           git push origin || echo "No changes to push"
