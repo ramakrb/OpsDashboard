@@ -74,7 +74,7 @@ for res in res_attrib:
     draw.line(cup+[cup[0]], fill=fill1) # Add width=2 if desired
 
 
-    font_size = 26
+    font_size = 28
     font_face = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
     #font_face = '/usr/share/fonts/truetype/freefont/FreeSans.ttf'
     width, height = draw.textsize(label, font=ImageFont.truetype(font_face, font_size))
