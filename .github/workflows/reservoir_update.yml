@@ -1,0 +1,35 @@
+name: Update Reservoir Image
+
+on:
+  schedule:
+    - cron: '0 13 * * *'  # Runs daily at midnight UTC
+  workflow_dispatch: #allows manual triggering of workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas Pillow
+
+      - name: Run reservoir update script
+        run: python scripts/reservoir_update.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add scripts/Basin8TC.png
+          git commit -m "Update Basin8TC.png" || echo "No changes to commit"
+          git push origin || echo "No changes to push"
