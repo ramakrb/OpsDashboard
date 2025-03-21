@@ -75,7 +75,7 @@ for res in res_attrib:
 
 
     font_size = 30
-    font_face = 'C://Windows/Fonts/Arial.ttf'
+    font_face = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
     width, height = draw.textsize(label, font=ImageFont.truetype(font_face, font_size))
     label_box = [(x, y+3), (x + width, y+3 + height)]
     draw.rectangle(label_box, fill=colors['white'])
