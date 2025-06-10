@@ -1,6 +1,6 @@
 res_attrib = [
-    {'label': 'Lake Powell', 'upper_left': (2320, 170), 'size': 7.0, 'max_fill': 23313800, 'current_fill': 7838603, 'date': '06/08/2025'},
-    {'label': 'Lake Mead', 'upper_left': (1300, 310), 'size': 7.0, 'max_fill': 26120000, 'current_fill': 8138299, 'date': '06/08/2025'},
-    {'label': 'Lake Mohave', 'upper_left': (1580, 620), 'size': 2.5, 'max_fill': 1809800, 'current_fill': 1726532, 'date': '06/08/2025'},
-    {'label': 'Lake Havasu', 'upper_left': (1680, 890), 'size': 2.0, 'max_fill': 619400, 'current_fill': 596005, 'date': '06/08/2025'},
+    {'label': 'Lake Powell', 'upper_left': (2320, 170), 'size': 7.0, 'max_fill': 23313800, 'current_fill': 7854992, 'date': '06/09/2025'},
+    {'label': 'Lake Mead', 'upper_left': (1300, 310), 'size': 7.0, 'max_fill': 26120000, 'current_fill': 8127872, 'date': '06/09/2025'},
+    {'label': 'Lake Mohave', 'upper_left': (1580, 620), 'size': 2.5, 'max_fill': 1809800, 'current_fill': 1730881, 'date': '06/09/2025'},
+    {'label': 'Lake Havasu', 'upper_left': (1680, 890), 'size': 2.0, 'max_fill': 619400, 'current_fill': 592843, 'date': '06/09/2025'},
 ]
